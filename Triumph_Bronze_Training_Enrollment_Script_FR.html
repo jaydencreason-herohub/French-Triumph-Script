@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Triumph Champion de Marque Bronze — Script d'Appel d'Inscription</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      padding: 40px 20px;
+    }
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+    }
+    .header {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2b5cb0 100%);
+      padding: 36px 40px 28px;
+      color: #fff;
+    }
+    .header .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      margin-bottom: 14px;
+      color: #d4e6ff;
+    }
+    .header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.70);
+      font-weight: 400;
+    }
+    .body {
+      padding: 36px 40px;
+    }
+    .section {
+      margin-bottom: 32px;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .section-label .pill {
+      background: #e8f0fe;
+      color: #1a3a6b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-radius: 14px;
+      padding: 4px 13px;
+    }
+    .section-label hr {
+      flex: 1;
+      border: none;
+      border-top: 1.5px solid #e5e9f2;
+    }
+    .script-block {
+      background: #f6f8fd;
+      border-left: 4px solid #2b5cb0;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+    }
+    .script-block .placeholder {
+      font-weight: 700;
+      color: #2b5cb0;
+      background: #dce9ff;
+      border-radius: 4px;
+      padding: 1px 5px;
+    }
+    .note {
+      background: #fffbea;
+      border: 1px solid #f5d84a;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 13px;
+      color: #6b5a00;
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .note .icon {
+      font-size: 15px;
+      line-height: 1.6;
+      flex-shrink: 0;
+    }
+    .field-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .field {
+      flex: 1;
+      background: #f0f2f5;
+      border: 1.5px solid #d5dce8;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .field label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7a99;
+      margin-bottom: 4px;
+    }
+    .field .value {
+      font-size: 14px;
+      color: #1a1a2e;
+    }
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checklist li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #1a1a2e;
+    }
+    .checklist li .bullet {
+      width: 22px;
+      height: 22px;
+      background: #2b5cb0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .checklist li .bullet svg {
+      width: 11px;
+      height: 11px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .close-block {
+      background: linear-gradient(135deg, #e8f0fe 0%, #f0f6ff 100%);
+      border: 1.5px solid #c5d8f8;
+      border-radius: 12px;
+      padding: 22px 26px;
+    }
+    .close-block p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1a1a2e;
+    }
+    .footer {
+      border-top: 1.5px solid #edf0f7;
+      padding: 18px 40px;
+      font-size: 12px;
+      color: #9aa3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">Formation Triumph — Niveau Bronze</div>
+    <h1>Champion de Marque Triumph — Script d'Appel d'Inscription</h1>
+    <p>Formation Essentiels des Ventes &amp; Fondamentaux du Financement &bull; Avril</p>
+  </div>
+
+  <div class="body">
+
+    <!-- Section 1: Introduction -->
+    <div class="section">
+      <div class="section-label">
+        <span class="pill">1 — Introduction</span>
+        <hr />
+      </div>
+      <div class="script-block">
+        « Bonjour, puis-je parler à <span class="placeholder">[NOM]</span>? »
+      </div>
+      <div class="note">
+        <span class="icon">📋</span>
+        <span>Si les noms figurant dans le rapport Triumph ne sont pas disponibles, demandez à parler au <strong>directeur général</strong>, au <strong>directeur des ventes</strong> ou au <strong>directeur administratif</strong>.</span>
+      </div>
+      <div class="script-block" style="margin-top:14px;">
+        « Bonjour <span class="placeholder">[NOM]</span>, je m'appelle <span class="placeholder">[VOTRE NOM]</span> et j'appelle au nom de Triumph.
+        <br /><br />
+        Je vous contacte concernant la Formation Niveau Bronze — Essentiels des Ventes &amp; Fondamentaux du Financement de Triumph. Cette formation est <strong>obligatoire</strong> pour bénéficier des incitatifs Triumph TAP et elle est <strong>sans frais</strong> pour votre concession. Je souhaitais prendre quelques minutes pour procéder à votre inscription et vous expliquer ce à quoi vous pouvez vous attendre au mois d'avril. »
+      </div>
+    </div>
+
+    <!-- Section 2: Inscription -->
+    <div class="section">
+      <div class="section-label">
+        <span class="pill">2 — Inscription</span>
+        <hr />
+      </div>
+      <div class="script-block">
+        « Pour vous inscrire aux sessions en visioconférence, quelle journée et quelle heure vous conviendraient le mieux ? »
+      </div>
+      <div class="note">
+        <span class="icon">⏰</span>
+        <span><strong>VÉRIFIEZ LE FUSEAU HORAIRE DU CLIENT AVANT DE PROPOSER LES HEURES.</strong></span>
+      </div>
+      <div class="field-row" style="margin-top:14px;">
+        <div class="field">
+          <label>Mercredis</label>
+          <div class="value">0 h 00 &nbsp;/&nbsp; 0 h 00</div>
+        </div>
+        <div class="field">
+          <label>Jeudis</label>
+          <div class="value">0 h 00 &nbsp;/&nbsp; 0 h 00</div>
+        </div>
+      </div>
+      <div class="script-block">
+        « Quel serait votre deuxième choix si cette plage horaire est déjà complète ? »
+        <br /><br />
+        <em style="color:#5a6a8a; font-size:13.5px;">(Remplissez le formulaire d'inscription en leur nom tout en confirmant leurs informations.)</em>
+      </div>
+    </div>
+
+    <!-- Section 3: À Quoi S'attendre -->
+    <div class="section">
+      <div class="section-label">
+        <span class="pill">3 — Ce à quoi vous pouvez vous attendre</span>
+        <hr />
+      </div>
+      <div class="script-block" style="margin-bottom:18px;">
+        « Une fois votre inscription complétée, voici ce qui vous attend : »
+      </div>
+      <ul class="checklist">
+        <li>
+          <span class="bullet"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          <span>Vous recevrez un <strong>courriel de confirmation d'inscription</strong> — surveillez votre boîte de réception.</span>
+        </li>
+        <li>
+          <span class="bullet"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          <span>La formation comprend <strong>5 sessions virtuelles en direct</strong>, à raison d'une session par semaine tout au long du mois d'avril. Chaque session dure <strong>90 minutes</strong>.</span>
+        </li>
+        <li>
+          <span class="bullet"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          <span>Vous recevrez également un <strong>courriel distinct pour vous inscrire au portail Triumph</strong> — c'est là que vous pourrez consulter le calendrier de chaque session et les rejoindre le moment venu.</span>
+        </li>
+        <li>
+          <span class="bullet"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          <span>Vous recevrez des <strong>invitations de calendrier Microsoft Teams</strong> pour chacune des réunions auxquelles vous vous inscrivez — elles seront directement enregistrées dans votre calendrier et faciles à retrouver.</span>
+        </li>
+        <li>
+          <span class="bullet"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+          <span>Enfin — <strong>Disposez-vous d'un ordinateur portable ou d'un ordinateur de bureau avec une caméra vidéo et un microphone ?</strong> L'activation de votre caméra et un microphone fonctionnel sont <strong>obligatoires</strong> pour chaque session.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 4: Conclusion -->
+    <div class="section">
+      <div class="section-label">
+        <span class="pill">4 — Conclusion</span>
+        <hr />
+      </div>
+      <div class="close-block">
+        <p>
+          « Avez-vous des questions concernant la formation ou le processus d'inscription ?
+          <br /><br />
+          Parfait — votre inscription est confirmée ! Nous sommes ravis de vous compter parmi nous et nous avons hâte de vous retrouver en avril. Bonne journée ! »
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Formation Triumph Champion de Marque — Niveau Bronze &bull; Usage interne seulement
+  </div>
+
+</div>
+</body>
+</html>
